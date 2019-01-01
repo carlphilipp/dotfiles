@@ -212,7 +212,7 @@ gaps inner 20
 workspace 10 gaps inner 50
 
 # Lock screen
-bindsym $mod+l exec i3lock -i "/home/carl/Dropbox/Photos/Fond d'écran HD/98 - jGFgkAm.png"
+bindsym $mod+l exec --no-startup-id i3lock -i "/home/carl/Dropbox/Photos/Fond d'écran HD/98 - jGFgkAm.png"
 
 # Start ws 10 panel
 bindsym $mod+Shift+Delete exec --no-startup-id /home/carl/.config/i3/scripts/ws10.sh
@@ -226,10 +226,11 @@ exec --no-startup-id compton -b -f &
 exec --no-startup-id slack &
 exec --no-startup-id skypeforlinux &
 exec --no-startup-id dropbox &
-exec --no-startup-id i3-msg 'workspace 2; exec i3-sensible-terminal'
+#exec --no-startup-id i3-msg 'workspace 2; exec --no-startup-id i3-sensible-terminal'
 exec --no-startup-id xautolock -time 5 -locker /home/carl/.config/i3lock/run.sh 
 exec --no-startup-id /home/carl/.config/i3/scripts/random-background.sh &
 exec --no-startup-id /home/carl/Documents/scripts/lightsonplus/lightson+
+
 
 #           colour of border, background, text, indicator,child_border
 client.focused			#bf616a #7e52c6 #d8dee8 #bf616a #7e52c6

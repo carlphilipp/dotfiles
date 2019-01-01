@@ -38,11 +38,18 @@ update_dir() {
     CURRENT=$(echo $1 | sed 's/\/home\/[a-z]*\///')
     TYPE=$2
 
-    if [ ! -d $NEW ]; then
-         mkdir -p $NEW
+    if [ ! -d $CURRENT ]; then
+        echo Create new directory $CURRENT
+        mkdir -p $CURRENT
     fi
 
-    cp -R $NEW .
+    COMPARE=$(grep -o "/" <<<"$CURRENT" | wc -l)
+    if [ "$COMPARE" -gt 1 ]; then
+        cp -R $NEW .
+    else
+        cp -R $NEW/* $CURRENT
+    fi
+    #cp -R $NEW .
     display_done $NEW $CURRENT $TYPE
 }
 

@@ -130,10 +130,9 @@ font-1 = "Font Awesome 5 Free:style=Regular:size=10;0"
 font-2 = "Font Awesome 5 Free:style=Solid:size=10;0"
 font-3 = "Font Awesome 5 Brands:style=Regular:size=10;0"
 
-;modules-left = ewmh i3 xwindow
 modules-left = i3
 modules-center = bitcoin eth
-modules-right = pavolume pub-ip wireless-network battery date
+modules-right = pub-ip wireless-network pavolume battery date
 
 separator = " "
 
@@ -514,7 +513,7 @@ animation-charging-framerate = 750
 [module/bitcoin]
 type = custom/script
 exec = ~/.config/polybar/scripts/bitcoin.sh
-interval = 100
+interval = 60
 label = %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -525,7 +524,7 @@ format-underline = #FFBB00
 [module/eth]
 type = custom/script
 exec = ~/.config/polybar/scripts/eth.sh
-interval = 100
+interval = 60
 label = %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -948,7 +947,7 @@ interval = 1000
 label = Repo: %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
+format-prefix = " "
 format-prefix-foreground = ${colors.yellow}
 format-underline = ${colors.yellow}
 
@@ -1126,7 +1125,7 @@ format-muted-background = ${colors.background}
 
 [module/weather]
 type = custom/script
-interval = 10
+interval = 100
 format = <label>
 format-prefix = " "
 format-prefix-foreground = #3EC13F
@@ -1187,7 +1186,7 @@ format-connected-prefix-background = ${colors.background}
 format-connected-underline = ${colors.purple}
 
 label-disconnected = %{A1:networkmanager_dmenu:}disconnected%{A}
-label-disconnected-foreground = ${colors.alert}
+label-disconnected-foreground = ${colors.foreground}
 label-disconnected-background = ${colors.background}
 
 format-disconnected = <label-disconnected>

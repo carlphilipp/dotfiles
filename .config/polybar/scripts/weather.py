@@ -11,15 +11,16 @@
 # create an account on this website
 # create an api key (free)
 
-
 import requests
+import time
 
-CITY = "2803138"
-API_KEY = "756edce7e9d4c385ef9499a53492678c"
-UNITS = "Metric"
-UNIT_KEY = "C"
-#UNIT_KEY = "F"
+CITY = "4887398"
+API_KEY = "e0f434051b304670342f0863ef639b4e"
+UNITS = "Imperial"
+#UNIT_KEY = "C"
+UNIT_KEY = "F"
 
+time.sleep(10)
 REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&appid={}&units={}".format(CITY, API_KEY, UNITS))
 try:
     # HTTP CODE = OK
