@@ -1,14 +1,5 @@
 #!/bin/sh
 
-#echo " Write in your age: "
-#age="5"
-
-#if [[ "$age" -le 7 || "$age" -ge 65 ]] ; then
-#    echo " You can walk in for free "
-#elif [[ "$age" -gt 7 && "$age" -lt 65 ]] ; then
-#    echo " You have to pay for ticket "
-#fi
-
 IS_CONNECTED=$(/bin/sh ~/.config/polybar/scripts/connect.sh)
 if [ "$IS_CONNECTED" == "1" ]
 then
