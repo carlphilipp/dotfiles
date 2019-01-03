@@ -63,5 +63,6 @@ update_dir ~/.config/i3lock i3lock
 update_dir ~/.config/polybar polybar
 update_dir ~/.config/rofi rofi
 update_dir ~/.config/lightsonplus lightsonplus
+update ~/.config/flashfocus/flashfocus.yml flashfocus
 echo "Done!"
 
