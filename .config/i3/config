@@ -195,12 +195,13 @@ bindsym $mod+r mode "resize"
 
 # Window rules, you can find the window class using xprop
 for_window [class="^.*"] border pixel 6
+for_window [class="Yad"] border pixel 2
 assign [class=Firefox] 1
 assign [class=Slack|Skype] 3
 assign [class=jetbrains-idea|jetbrains-studio] 4
 assign [class=Truecrypt|libreoffice-calc] 5
 for_window [title="Terminator Preferences"] floating enable
-for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
+for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 for_window [class=Slack] resize grow width 30 px or 30 ppt
@@ -212,7 +213,8 @@ gaps inner 20
 workspace 10 gaps inner 50
 
 # Lock screen
-bindsym $mod+l exec --no-startup-id i3lock -i "~/Dropbox/Photos/Fond d'écran HD/98 - jGFgkAm.png"
+#bindsym $mod+l exec --no-startup-id i3lock -i ~/Dropbox/Photos/Fond\ d\'écran\ HD/98\ -\ jGFgkAm.png
+bindsym $mod+l exec --no-startup-id i3lock-fancy
 
 # Start ws 10 panel
 bindsym $mod+Shift+Delete exec --no-startup-id ~/.config/i3/scripts/ws10.sh
