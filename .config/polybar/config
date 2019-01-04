@@ -9,6 +9,8 @@
 ;   https://github.com/jaagr/polybar/wiki/Configuration
 ;   https://github.com/jaagr/polybar/wiki/Formatting
 ;
+;	Credits to ArcoLinux https://github.com/arcolinux/arcolinux-polybar (Thanks!) 
+;
 ;=====================================================
 
 [global/wm]
@@ -119,7 +121,7 @@ module-margin-left = 3
 module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = Sans-Regular:size=9;0
+font-0 = "System San Francisco Display:pixelsize=10;0"
 font-1 = "Font Awesome 5 Free:style=Regular:size=10;0"
 font-2 = "Font Awesome 5 Free:style=Solid:size=10;0"
 font-3 = "Font Awesome 5 Brands:style=Regular:size=10;0"
@@ -210,8 +212,9 @@ module-margin-right = 3
 ;font-0 = System San Francisco Display:size=10;0
 ;font-1 = fontawesome-regular:size=10:0
 ;font-2 = NotoMono-Regular: size=10;0
+;font-0 = Sans-Regular:size=9;0
 
-font-0 = Sans-Regular:size=9;0
+font-0 = "System San Francisco Display:pixelsize=10;0"
 font-1 = "Font Awesome 5 Free:style=Regular:size=10;0"
 font-2 = "Font Awesome 5 Free:style=Solid:size=10;0"
 font-3 = "Font Awesome 5 Brands:style=Regular:size=10;0"
@@ -570,28 +573,28 @@ format-padding = 2
 label-font = 3
 label = Cpu %percentage:1%%
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
+ramp-coreload-0-font = 3
 ramp-coreload-0-foreground = #aaff77
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
+ramp-coreload-1-font = 3
 ramp-coreload-1-foreground = #aaff77
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
+ramp-coreload-2-font = 3
 ramp-coreload-2-foreground = #aaff77
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
+ramp-coreload-3-font = 3
 ramp-coreload-3-foreground = #aaff77
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
+ramp-coreload-4-font = 3
 ramp-coreload-4-foreground = #fba922
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
+ramp-coreload-5-font = 3
 ramp-coreload-5-foreground = #fba922
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
+ramp-coreload-6-font = 3
 ramp-coreload-6-foreground = #ff5555
 ramp-coreload-7 = █
-ramp-coreload-7-font = 2
+ramp-coreload-7-font = 3
 ramp-coreload-7-foreground = #ff5555
 
 ################################################################################
@@ -1185,11 +1188,11 @@ interface = wlp2s0
 interval = 3.0
 label-connected = %essid%
 
-format-connected = <ramp-signal> %{A1:networkmanager_dmenu:}<label-connected>%{A}
+format-connected = %{A1:networkmanager_dmenu:}<label-connected>%{A}
 ;format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-format-connected-prefix = "  "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.purple}
 format-connected-prefix-background = ${colors.background}
 format-connected-underline = ${colors.purple}
@@ -1201,20 +1204,20 @@ label-disconnected-background = ${colors.background}
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${colors.purple}
 format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
+format-disconnected-prefix = " "
 format-disconnected-prefix-foreground = ${colors.purple}
 format-disconnected-prefix-background = ${colors.background}
 format-disconnected-underline = ${colors.purple}
 
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
+;ramp-signal-0 = ▁
+;ramp-signal-1 = ▂
+;ramp-signal-2 = ▃
+;ramp-signal-3 = ▄
+;ramp-signal-4 = ▅
+;ramp-signal-5 = ▆
+;ramp-signal-6 = ▇
+;ramp-signal-7 = █
+;ramp-signal-foreground = #7e52c6
 
 ################################################################################
 
