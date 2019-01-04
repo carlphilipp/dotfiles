@@ -64,5 +64,6 @@ update_dir ~/.config/polybar polybar
 update_dir ~/.config/rofi rofi
 update_dir ~/.config/lightsonplus lightsonplus
 update ~/.config/flashfocus/flashfocus.yml flashfocus
+update ~/.config/dunst/dunstrc dunst
 echo "Done!"
 

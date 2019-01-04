@@ -200,6 +200,7 @@ assign [class=Firefox] 1
 assign [class=Slack|Skype] 3
 assign [class=jetbrains-idea|jetbrains-studio] 4
 assign [class=Truecrypt|libreoffice-calc] 5
+assign [class=Clementine] 6
 for_window [title="Terminator Preferences"] floating enable
 for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
@@ -222,6 +223,7 @@ bindsym $mod+Shift+Delete exec --no-startup-id ~/.config/i3/scripts/ws10.sh
 # Flash focus windows
 bindsym $mod+n exec --no-startup-id flash_window
 
+exec --no-startup-id dunst &
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id nm-applet 
 exec --no-startup-id ~/.config/polybar/launch.sh
