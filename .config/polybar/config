@@ -95,17 +95,17 @@ border-size = 0
 border-color = #000000
 
 padding-left = 1
-padding-right = 1
+padding-right = 3
 
 module-margin-left = 3
 module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "System San Francisco Display:pixelsize=10;0"
-font-1 = "Material Icons:size=14;2"
-font-2 = "Font Awesome 5 Free:style=Regular:size=10;0"
-font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
-font-4 = "Font Awesome 5 Brands:style=Regular:size=10;0"
+font-0 = "Font Awesome 5 Free:style=Solid:size=10;0"
+;font-1 = "Font Awesome 5 Free:style=Regular:size=10;0"
+font-1 = "Font Awesome 5 Brands:style=Regular:size=10;0"
+font-2 = "System San Francisco Display:pixelsize=10;0"
+font-3 = "Material Icons:size=14;2"
 
 modules-left = i3
 modules-center = bitcoin eth
@@ -195,17 +195,17 @@ module-margin-right = 3
 ;font-2 = NotoMono-Regular: size=10;0
 ;font-0 = Sans-Regular:size=9;0
 
-font-0 = "System San Francisco Display:pixelsize=10;0"
-font-1 = "Material Icons:size=14;2"
-font-2 = "Font Awesome 5 Free:style=Regular:size=10;0"
-font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
-font-4 = "Font Awesome 5 Brands:style=Regular:size=10;0"
+font-0 = "Font Awesome 5 Free:style=Solid:size=10;0"
+;font-1 = "Font Awesome 5 Free:style=Regular:size=10;0"
+font-1 = "Font Awesome 5 Brands:style=Regular:size=10;0"
+font-2 = "System San Francisco Display:pixelsize=10;0"
+font-3 = "Material Icons:size=14;2"
 
 modules-left = networkspeedup networkspeeddown
 modules-center = cpu2 memory2 temperature3 xbacklight
 modules-right = pacman-updates
 
-separator = " "
+separator =
 
 ;dim-value = 1.0
 
@@ -936,7 +936,6 @@ format-underline = ${colors.yellow}
 [module/powermenu]
 type = custom/text
 content = 
-content-padding = 1
 content-foreground = #ff008e
 content-background = ${colors.background}
 click-left = ~/.config/rofi/scripts/pmenu.sh
