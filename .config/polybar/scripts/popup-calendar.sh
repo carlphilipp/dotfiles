@@ -11,7 +11,7 @@ case "$1" in
 
         # TODO Detect if the window exists already and close it
     
-        pos_y=35
+        pos_y=32
         pos_x=1654
 
         yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons \
