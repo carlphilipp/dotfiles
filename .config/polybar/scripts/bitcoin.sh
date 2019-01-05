@@ -7,7 +7,13 @@ then
     VALUE=$(echo $RESPONSE | json RAW.BTC.USD.PRICE | sed 's/ //g')
     PERCENTAGE=$(echo $RESPONSE | json DISPLAY.BTC.USD.CHANGEPCT24HOUR)
 
-    echo \$$VALUE $PERCENTAGE%
+    if [ $(echo $PERCENTAGE'>'0 | bc -l) == 1 ] ; then
+         PERCENTAGE_DISPLAY=+$PERCENTAGE%
+	else
+         PERCENTAGE_DISPLAY=$PERCENTAGE%
+    fi
+
+    echo \$$VALUE $PERCENTAGE_DISPLAY
 else
     echo ?
 fi

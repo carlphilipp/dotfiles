@@ -41,7 +41,6 @@ format-margin =
 format-offset =
 
 [colors]
-; Nord theme ============
 background = #2F343F
 foreground = #f3f4f5
 alert = #d08770
@@ -49,32 +48,13 @@ volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
 blue = #2156c5
+cyan = #00acc1
 green = #0B8D44
 purple = #7e52c6
-red = #d00000
+red = #e53935
+teal = #00897b
+orange = #f4511e
 yellow = #b8b100
-
-; =======================
-
-; Gotham theme ==========
-; background = #0a0f14
-; foreground = #99d1ce
-; alert = #d26937
-; volume-min = #2aa889
-; volume-med = #edb443
-; volume-max = #c23127
-; =======================
-
-; INTRCPTR theme ============
-;background = ${xrdb:color0:#222}
-;background = #aa000000
-;background-alt = #444
-;foreground = ${xrdb:color7:#222}
-;foreground = #fff
-;foreground-alt = #555
-;primary = #ffb52a
-;secondary = #e60053
-;alert = #bd2c40
 
 ################################################################################
 ################################################################################
@@ -122,15 +102,16 @@ module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "System San Francisco Display:pixelsize=10;0"
-font-1 = "Font Awesome 5 Free:style=Regular:size=10;0"
-font-2 = "Font Awesome 5 Free:style=Solid:size=10;0"
-font-3 = "Font Awesome 5 Brands:style=Regular:size=10;0"
+font-1 = "Material Icons:size=14;2"
+font-2 = "Font Awesome 5 Free:style=Regular:size=10;0"
+font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
+font-4 = "Font Awesome 5 Brands:style=Regular:size=10;0"
 
 modules-left = i3
 modules-center = bitcoin eth
-modules-right = pub-ip wireless-network pavolume battery popup-calendar
+modules-right = pub-ip wireless-network pavolume battery popup-calendar powermenu
 
-separator = " "
+separator =
 
 ;dim-value = 1.0
 
@@ -215,9 +196,10 @@ module-margin-right = 3
 ;font-0 = Sans-Regular:size=9;0
 
 font-0 = "System San Francisco Display:pixelsize=10;0"
-font-1 = "Font Awesome 5 Free:style=Regular:size=10;0"
-font-2 = "Font Awesome 5 Free:style=Solid:size=10;0"
-font-3 = "Font Awesome 5 Brands:style=Regular:size=10;0"
+font-1 = "Material Icons:size=14;2"
+font-2 = "Font Awesome 5 Free:style=Regular:size=10;0"
+font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
+font-4 = "Font Awesome 5 Brands:style=Regular:size=10;0"
 
 modules-left = networkspeedup networkspeeddown
 modules-center = cpu2 memory2 temperature3 xbacklight
@@ -230,7 +212,7 @@ separator = " "
 tray-position = right
 tray-detached = false
 tray-maxsize = 20
-tray-transparent = false
+;tray-transparent = false
 tray-background = ${colors.background}
 tray-offset-x = 0
 tray-offset-y = 0
@@ -468,7 +450,7 @@ bar-empty = ─
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
 battery = BAT0
-adapter = AC0
+adapter = AC
 full-at = 100
 
 format-charging = <animation-charging>  <label-charging>
@@ -489,11 +471,11 @@ format-full-underline = ${colors.green}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = %{F#ff0000}
+ramp-capacity-1 = %{F#ff7400}
+ramp-capacity-2 = %{F#b8b100}
+ramp-capacity-3 = %{F#f3f4f5}
+ramp-capacity-4 = %{F#f3f4f5}
 ramp-capacity-foreground = ${colors.yellow}
 
 animation-charging-0 = 
@@ -514,7 +496,7 @@ interval = 60
 label = %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = #FFBB00
 format-underline = #FFBB00
 
@@ -932,7 +914,7 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-underline = ${colors.green}
+format-underline = ${colors.cyan}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -951,6 +933,18 @@ format-underline = ${colors.yellow}
 
 ################################################################################
 
+[module/powermenu]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = #ff008e
+content-background = ${colors.background}
+click-left = ~/.config/rofi/scripts/pmenu.sh
+click-right = ~/.config/rofi/scripts/pmenu.sh
+;content-underline = #000000
+
+################################################################################
+
 [module/pub-ip]
 ;https://linuxconfig.org/polybar-a-better-wm-panel-for-your-linux-system
 type = custom/script
@@ -958,10 +952,10 @@ exec = ~/.config/polybar/scripts/pub-ip.sh
 interval = 100
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-underline = ${colors.blue}
+format-underline = ${colors.orange}
 label = %output%
-format-prefix = "  "
-format-prefix-foreground = ${colors.blue}
+format-prefix = "  "
+format-prefix-foreground = ${colors.orange}
 ;
 
 ################################################################################

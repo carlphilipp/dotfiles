@@ -3,13 +3,18 @@
 # credits
 # https://linuxconfig.org/polybar-a-better-wm-panel-for-your-linux-system
 
-#IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
-COUNTRY=$(sleep 11 && curl -s https://ifconfig.co/json | json country)
-CITY=$(curl -s https://ifconfig.co/json | json city)
-
-if [ "$COUNTRY" != "" ]
+IS_CONNECTED=$(/bin/sh ~/.config/polybar/scripts/connect.sh)
+if [ "$IS_CONNECTED" == "1" ]
 then
-  echo $COUNTRY, $CITY
+	COUNTRY=$(curl -s https://ifconfig.co/json | json country)
+	CITY=$(curl -s https://ifconfig.co/json | json city)
+
+	if [ "$COUNTRY" != "" ]
+	then
+	  echo $COUNTRY, $CITY
+	else
+	  echo "No VPN"
+	fi
 else
-  echo "No VPN"
+    echo ?
 fi

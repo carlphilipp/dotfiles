@@ -139,9 +139,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Logout' 'i3-msg exit' -B 'Reboot' 'systemctl reboot' -B 'Shutdown' 'systemctl poweroff -i'"
-
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Logout' 'i3-msg exit' -B 'Reboot' 'systemctl reboot' -B 'Shutdown' 'systemctl poweroff -i'"
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/scripts/pmenu.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -199,7 +198,7 @@ for_window [class="Yad"] border pixel 2
 assign [class=Firefox] 1
 assign [class=Slack|Skype] 3
 assign [class=jetbrains-idea|jetbrains-studio] 4
-assign [class=Truecrypt|libreoffice-calc] 5
+assign [class=Truecrypt|libreoffice-calc|Google-chrome] 5
 assign [class=Clementine] 6
 for_window [title="Terminator Preferences"] floating enable
 for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad] floating enable
@@ -223,11 +222,12 @@ bindsym $mod+Shift+Delete exec --no-startup-id ~/.config/i3/scripts/ws10.sh
 # Flash focus windows
 bindsym $mod+n exec --no-startup-id flash_window
 
-exec --no-startup-id dunst &
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id nm-applet 
-exec --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id xset r rate 300 40
+exec_always --no-startup-id xset r rate 300 40
+
+exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc &
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets &
+exec --no-startup-id nm-applet &
+exec --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b -f &
 exec --no-startup-id slack &
@@ -235,8 +235,8 @@ exec --no-startup-id skypeforlinux &
 exec --no-startup-id dropbox &
 exec --no-startup-id xautolock -time 5 -locker i3lock-fancy
 exec --no-startup-id ~/.config/i3/scripts/random-background.sh &
-exec --no-startup-id ~/.config/lightsonplus/lightson+
-exec --no-startup-id flashfocus
+exec --no-startup-id ~/.config/lightsonplus/lightson+ &
+#exec --no-startup-id flashfocus &
 
 #           colour of border, background, text, indicator,child_border
 client.focused			#bf616a #7e52c6 #d8dee8 #bf616a #7e52c6
