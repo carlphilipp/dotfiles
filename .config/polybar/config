@@ -468,6 +468,8 @@ format-discharging-background = ${colors.background}
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.green}
 format-full-underline = ${colors.green}
+format-full-background = ${colors.background}
+format-full-foreground = ${colors.green}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
