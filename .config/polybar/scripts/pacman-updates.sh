@@ -3,13 +3,15 @@
 # credits
 # https://linuxconfig.org/polybar-a-better-wm-panel-for-your-linux-system
 
-IS_CONNECTED=$(/bin/sh ~/.config/polybar/scripts/connect.sh)
-if [ "$IS_CONNECTED" == "1" ]
+isConnected=$(/bin/sh ~/.config/polybar/scripts/connect.sh)
+if [ "$isConnected" == "1" ]
 then
-    UPDATE=$(checkupdates | wc -l)
-    if [ "$UPDATE" != "0" ]
+    update_manjaro=$(checkupdates | wc -l)
+    updates_aur=$(yay -Pn)
+    updates=$(("$updates_arch" + "$updates_aur")) 
+    if [ "$updates" != "0" ]
     then
-        echo $UPDATE
+        echo $updates
     else
         echo ""
     fi
