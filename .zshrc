@@ -96,6 +96,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+DISABLE_CORRECTION="true"
+
 # Path
 export PATH=$PATH:~/.bin:/opt/mongodb/bin:~/Documents/scripts/:/usr/share/keepass:/home/carl/Documents/google-cloud-sdk/bin:/home/carl/Documents/fdroidserver
 
