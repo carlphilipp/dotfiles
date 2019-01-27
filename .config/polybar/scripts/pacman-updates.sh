@@ -8,7 +8,7 @@ if [ "$isConnected" == "1" ]
 then
     update_manjaro=$(checkupdates | wc -l)
     updates_aur=$(yay -Pn)
-    updates=$(("$updates_arch" + "$updates_aur")) 
+    updates=$(("$update_manjaro" + "$updates_aur")) 
     if [ "$updates" != "0" ]
     then
         echo $updates
