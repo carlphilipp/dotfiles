@@ -4,15 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/carl/.oh-my-zsh
 
-
-
+# Set powerlevel9k mode before zsh theme
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 #POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_MODE='nerdfont-complete'
-
-
-
-
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -110,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 DISABLE_CORRECTION="true"
 
 # Path
-export PATH=$PATH:~/.bin:/opt/mongodb/bin:~/Documents/scripts/:/usr/share/keepass:/home/carl/Documents/google-cloud-sdk/bin:/home/carl/Documents/fdroidserver
+export PATH=$PATH:~/.bin:/opt/mongodb/bin:~/Documents/scripts/:/usr/share/keepass:~/Documents/google-cloud-sdk/bin:~/Documents/fdroidserver
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
@@ -142,14 +137,6 @@ TERM=xterm-256color
 # ===================
 # Powerlevel9k
 # ===================
-
-# Font mode for powerlevel9k
-#POWERLEVEL9K_MODE='awesome-fontconfig'
-#POWERLEVEL9K_MODE='awesome-patched'
-#POWERLEVEL9K_MODE='nerdfont-complete'
-
-# Set name of the theme to load.
-#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Prompt settings
 POWERLEVEL9K_PROMPT_ON_NEWLINE=false
@@ -194,7 +181,7 @@ POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
 
 # VCS CONFIG
 POWERLEVEL9K_SHOW_CHANGESET=false
-POWERLEVEL9K_VCS_HIDE_TAGS=true
+POWERLEVEL9K_VCS_HIDE_TAGS=false
 
 # Status
 POWERLEVEL9K_OK_ICON=$'\uf164'
