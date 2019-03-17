@@ -221,7 +221,8 @@ workspace 10 gaps inner 50
 #bindsym $mod+l exec --no-startup-id i3lock -i ~/Dropbox/Photos/Fond\ d\'écran\ HD/98\ -\ jGFgkAm.png
 bindsym $mod+l exec --no-startup-id i3lock-fancy
 
-# Start ws 10 panel
+# Start custom panels
+bindsym $mod+Shift+End exec --no-startup-id ~/.config/i3/scripts/ws9.sh
 bindsym $mod+Shift+Delete exec --no-startup-id ~/.config/i3/scripts/ws10.sh
 
 # Flash focus windows
