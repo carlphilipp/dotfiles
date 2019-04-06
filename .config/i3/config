@@ -197,7 +197,7 @@ bindsym $mod+r mode "resize"
 # Customization
 
 # Window rules, you can find the window class using xprop
-for_window [class="^.*"] border pixel 6
+for_window [class="^.*"] border pixel 4
 for_window [class="Yad"] border pixel 2
 assign [class=Firefox] 1
 assign [class=Slack|Skype] 3
@@ -205,8 +205,11 @@ assign [class=jetbrains-idea|jetbrains-studio] 4
 assign [class=Google-chrome] 5
 assign [class=Clementine] 6
 assign [class=Transmission-gtk] 7
+assign [class=java-lang-Thread|sun-awt-X11-XFramePeer] 8
+for_window [class=java-lang-Thread|sun-awt-X11-XFramePeer] floating enable border pixel 0
+for_window [class=sun-awt-X11-XFramePeer|net-sourceforge-jnlp-runtime-Boot] floating enable border pixel 0
 for_window [title="Terminator Preferences"] floating enable
-for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad] floating enable
+for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad|sun-awt-X11-XFramePeer] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 for_window [class=Slack] resize grow width 30 px or 30 ppt
@@ -245,7 +248,7 @@ exec --no-startup-id ~/.config/lightsonplus/lightson+ &
 #exec --no-startup-id flashfocus &
 
 #           colour of border, background, text, indicator,child_border
-client.focused			#bf616a #7e52c6 #d8dee8 #bf616a #7e52c6
+client.focused			#bf616a #336699 #d8dee8 #d8dee8 #336699
 client.focused_inactive	#2f343f #DFDDE0 #000000 #ffffff #ffffff
 client.unfocused		#2f343f #DFDDE0 #000000 #ffffff #ffffff
 client.urgent			#2f343f #DFDDE0 #000000 #ffffff #ffffff
