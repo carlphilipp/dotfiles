@@ -206,13 +206,14 @@ assign [class=Google-chrome] 5
 assign [class=Clementine] 6
 assign [class=Transmission-gtk] 7
 assign [class=java-lang-Thread|sun-awt-X11-XFramePeer] 8
+for_window [title="^Android Emulator -"] floating enable
 for_window [class=java-lang-Thread|sun-awt-X11-XFramePeer] floating enable border pixel 0
 for_window [class=sun-awt-X11-XFramePeer|net-sourceforge-jnlp-runtime-Boot] floating enable border pixel 0
 for_window [title="Terminator Preferences"] floating enable
 for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad|sun-awt-X11-XFramePeer] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
-for_window [class=Slack] resize grow width 30 px or 30 ppt
+for_window [class=Skype] resize set width 500px
 
 # Gaps
 smart_gaps on
