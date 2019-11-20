@@ -210,10 +210,10 @@ for_window [title="^Android Emulator -"] floating enable
 for_window [class=java-lang-Thread|sun-awt-X11-XFramePeer] floating enable border pixel 0
 for_window [class=sun-awt-X11-XFramePeer|net-sourceforge-jnlp-runtime-Boot] floating enable border pixel 0
 for_window [title="Terminator Preferences"] floating enable
-for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad|sun-awt-X11-XFramePeer] floating enable
+for_window [class=Galculator|Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol|Yad|sun-awt-X11-XFramePeer|com-itfinance-core-Starter] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
-for_window [class=Skype] resize set width 500px
+#for_window [class=Slack] resize set width 1500px
 
 # Gaps
 smart_gaps on
@@ -240,13 +240,14 @@ exec --no-startup-id nm-applet &
 exec --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b -f &
-exec --no-startup-id slack &
-exec --no-startup-id skypeforlinux &
+#exec --no-startup-id skypeforlinux &
 exec --no-startup-id dropbox &
-exec --no-startup-id xautolock -time 5 -locker i3lock-fancy
+#exec --no-startup-id xautolock -time 5 -locker i3lock-fancy
+exec --no-startup-id xidlehook --not-when-fullscreen --timer normal 300 'i3lock-fancy' ''
 exec --no-startup-id ~/.config/i3/scripts/random-background.sh &
 exec --no-startup-id ~/.config/lightsonplus/lightson+ &
 #exec --no-startup-id flashfocus &
+exec --no-startup-id slack &
 
 #           colour of border, background, text, indicator,child_border
 client.focused			#bf616a #336699 #d8dee8 #d8dee8 #336699

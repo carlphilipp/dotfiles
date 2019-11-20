@@ -109,7 +109,7 @@ font-3 = "Material Icons:size=14;2"
 
 modules-left = i3
 modules-center = bitcoin eth
-modules-right = pub-ip wireless-network pavolume battery popup-calendar powermenu
+modules-right = pub-ip wireless-network pulseaudio battery popup-calendar powermenu
 
 separator =
 
@@ -1276,3 +1276,59 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 ###############################################################################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume><label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+label-volume = " %percentage%%"
+label-volume-foreground = ${colors.foreground}
+label-volume-background = ${colors.background}
+label-volume-underline = ${colors.cyan}
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+label-muted =  %percentage%%
+label-muted-foreground = ${colors.foreground}
+label-muted-background = ${colors.background}
+label-muted-underline = ${colors.cyan}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 =  
+ramp-volume-1 =  
+ramp-volume-2 =  
+
+ramp-volume-underline = ${colors.cyan}
+ramp-volume-foreground = ${colors.foreground}
+ramp-volume-background = ${colors.background}
+
+format-underline = ${colors.cyan}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}

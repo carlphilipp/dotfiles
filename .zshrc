@@ -45,7 +45,7 @@ DEFAULT_USER="carl"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -108,10 +108,11 @@ DISABLE_CORRECTION="true"
 export PATH=$PATH:~/.bin:/opt/mongodb/bin:~/Documents/scripts/:/usr/share/keepass:~/Documents/google-cloud-sdk/bin:~/Documents/fdroidserver
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 #export JAVA_HOME=/usr/lib/jvm/java-9-openjdk
 #export JAVA_HOME=/usr/lib/jvm/java-10-openjdk
 #export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-18.9
+export JAVA_HOME=/usr/lib/jvm/java-12-j9
 
 # Google Cloud Platform
 export GOOGLE_APPLICATION_CREDENTIALS="/home/carl/Downloads/Cryptax-d6fa39f16a7e.json"
