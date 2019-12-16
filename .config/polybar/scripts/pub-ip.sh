@@ -6,15 +6,21 @@
 IS_CONNECTED=$(/bin/sh ~/.config/polybar/scripts/connect.sh)
 if [ "$IS_CONNECTED" == "1" ]
 then
-	COUNTRY=$(curl -s https://ifconfig.co/json | json country)
-	CITY=$(curl -s https://ifconfig.co/json | json city)
+    JSON=$(curl -s https://ifconfig.co/json)
+    if [[ "$JSON" == \<* ]]
+    then
+        echo "VPN: connected"
+    else
+        COUNTRY=$(echo "$JSON" | json country_iso)
+	    CITY=$(echo "$JSON" | json city)
 
-	if [ "$COUNTRY" != "" ]
-	then
-	  echo $COUNTRY, $CITY
-	else
-	  echo "No VPN"
-	fi
+	    if [ "$COUNTRY" != "" ]
+	    then
+	        echo "VPN: $CITY, $COUNTRY"
+	    else
+	        echo "VPN: connected"
+	    fi
+    fi
 else
-    echo ?
+    echo "VPN: offline"
 fi

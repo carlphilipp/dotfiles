@@ -205,7 +205,7 @@ assign [class=jetbrains-idea|jetbrains-studio] 4
 assign [class=Google-chrome] 5
 assign [class=Clementine] 6
 assign [class=Transmission-gtk] 7
-assign [class=java-lang-Thread|sun-awt-X11-XFramePeer] 8
+assign [class=java-lang-Thread|sun-awt-X11-XFramePeer|com-itfinance-core-Starter|BootStrap] 8
 for_window [title="^Android Emulator -"] floating enable
 for_window [class=java-lang-Thread|sun-awt-X11-XFramePeer] floating enable border pixel 0
 for_window [class=sun-awt-X11-XFramePeer|net-sourceforge-jnlp-runtime-Boot] floating enable border pixel 0
@@ -239,7 +239,7 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 
 exec --no-startup-id nm-applet &
 exec --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id xsettingsd &
-exec --no-startup-id compton -b -f &
+#exec --no-startup-id compton -b -f &
 #exec --no-startup-id skypeforlinux &
 exec --no-startup-id dropbox &
 #exec --no-startup-id xautolock -time 5 -locker i3lock-fancy
@@ -249,8 +249,8 @@ exec --no-startup-id ~/.config/lightsonplus/lightson+ &
 #exec --no-startup-id flashfocus &
 exec --no-startup-id slack &
 
-#           colour of border, background, text, indicator,child_border
-client.focused			#bf616a #336699 #d8dee8 #d8dee8 #336699
+#              color of border|background|text|indicator|child_border
+client.focused			#bf616a #2F343F #d8dee8 #d8dee8 #2F343F
 client.focused_inactive	#2f343f #DFDDE0 #000000 #ffffff #ffffff
 client.unfocused		#2f343f #DFDDE0 #000000 #ffffff #ffffff
 client.urgent			#2f343f #DFDDE0 #000000 #ffffff #ffffff
