@@ -121,7 +121,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/carl/Downloads/Cryptax-d6fa39f16a7e
 alias vi='vim'
 alias open='xdg-open'
 alias sudo='sudo '
-alias sudo='nocorrect sudo'
+#alias sudo='nocorrect sudo'
 
 setopt no_share_history
 
