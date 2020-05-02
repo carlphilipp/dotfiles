@@ -11,11 +11,11 @@ then
     then
         echo "VPN: connected"
     else
-        COUNTRY_CODE=$(echo "$JSON" | json country_iso)
+        COUNTRY_ISO=$(echo "$JSON" | json country_iso)
         COUNTRY=$(echo "$JSON" | json country)
 	    CITY=$(echo "$JSON" | json city)
-        if [ "$COUNTRY_CODE" != "" ] && [ "$CITY" != "" ]; then
-            echo "VPN: $CITY, $COUNTRY_CODE"
+        if [ "$COUNTRY_ISO" != "" ] && [ "$CITY" != "" ]; then
+            echo "VPN: $CITY, $COUNTRY_ISO"
             exit 1
         fi
         if [ "$COUNTRY" != "" ]; then
